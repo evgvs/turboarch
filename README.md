@@ -3,6 +3,8 @@
 # TurboArch - Seamlessly Replace Your Current OS with Arch Linux NOW!
 This script allows you to replace any Linux distribution with Arch Linux, preserving user data and some system configuration. 
 
+[Video demonstration on YouTube](https://youtu.be/OCnaunwBoWw) 
+
 ## Quick start
 Download and run required scripts:
 ```
@@ -46,7 +48,7 @@ This will ask some questions and begin Arch Linux installation. Data in `/home`,
 Edit the `mirrorlist.default` file to change the mirrors. If reflector is enabled, that mirrors will only be used to download python and reflector. 
 
 ### SSH
-Installing via ssh seems like a bad idea. However, it will probably work. Script will detect `$SSH_CONNECTION` and proceed to installation. If you are running script from some another remote shell, run script with environment variable `FORCE_NO_OPENVT=1`.
+Installing via ssh seems like a bad idea. However, it will probably work. Script will detect `$SSH_CONNECTION` and proceed to installation. If you are running script from some another remote shell, set environment variable `FORCE_NO_OPENVT=1`.
 
 ### Preconfigure
 To preconfigure the script, create a file called `config.default`:
