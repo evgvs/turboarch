@@ -11,6 +11,7 @@ cat << EOF
 TurboArch Release Candidate 4 ( https://evgvs.com/ )
 
 Copyright (C) 2024 Evgeny Vasilievich LINUX PIMP
+
 EOF
 
 if [ "$EUID" -ne 0 ]; then 
@@ -77,13 +78,13 @@ if [ ! -f config.default ]; then
     SET_SPACE_PASSWORD=0
   fi
 
-  NETWORKMANAGER=0
+  NETWORKMANAGER=1
   read -p "Do you want to install GNOME? [Y/n] " -r yn
   if [[ $yn == [Nn]* ]]; then 
     GNOME=0
     read -p "Do you want to use NetworkManager? [Y/n] " -r yn
     if [[ $yn == [Nn]* ]]; then 
-      NETWORKMANAGER=1
+      NETWORKMANAGER=0
     fi
   else
     GNOME=1

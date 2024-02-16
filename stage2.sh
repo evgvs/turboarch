@@ -49,7 +49,7 @@ fi
 
 
 echo -e "\e[1m\e[46m\e[97mINSTALLING BASE SYSTEM\e[0m"
-pacstrap -K /host-system base grub neofetch sudo vim efibootmgr xfsprogs btrfs-progs
+pacstrap -K /host-system base grub neofetch sudo vim efibootmgr xfsprogs btrfs-progs dhcpcd wpa_supplicant
 
 echo -e "\e[1m\e[46m\e[97mCOPYING FSTAB\e[0m"
 

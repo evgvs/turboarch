@@ -12,6 +12,15 @@ if [ -f /turboarch-config/wheel_users ]; then
   echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/00_wheel
 fi
 
+if [ -f /turboarch-config/passwd_delta ]; then
+  while IFS="" read -r p || [ -n "$p" ]
+  do
+    IFS=':' read -r -a arr <<< "$p"
+    echo -e "\e[1m\e[46m\e[97mCHOWN HOME DIRECTORY ${arr[5]} FOR USER ${arr[0]}\e[0m"
+    chown -R "${arr[0]}:${arr[0]}" "${arr[5]}" 
+  done < /turboarch-config/passwd_delta
+fi
+
 source /turboarch-config/config
 
 echo -e "\e[1m\e[46m\e[97mPERFORMING BASIC CONFIGURATION\e[0m"
