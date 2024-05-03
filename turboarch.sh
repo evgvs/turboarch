@@ -157,13 +157,13 @@ if [ -d '/archlinux-bootstrap' ]; then
 else
   echo 'Downloading archlinux-bootstrap'
   if command -v curl &> /dev/null; then
-    curl -L -o archlinux-bootstrap.tar.gz https://geo.mirror.pkgbuild.com/iso/latest/archlinux-bootstrap-x86_64.tar.zst
+    curl -L -o archlinux-bootstrap.tar.zst https://geo.mirror.pkgbuild.com/iso/latest/archlinux-bootstrap-x86_64.tar.zst
   else
-    wget -O archlinux-bootstrap.tar.gz https://geo.mirror.pkgbuild.com/iso/latest/archlinux-bootstrap-x86_64.tar.zst
+    wget -O archlinux-bootstrap.tar.zst https://geo.mirror.pkgbuild.com/iso/latest/archlinux-bootstrap-x86_64.tar.zst
   fi
 
   echo 'Extracting archlinux-bootstrap'
-  tar -x -f archlinux-bootstrap.tar.gz -C /
+  tar -x -f archlinux-bootstrap.tar.zst -C /
   mv /root.x86_64 /archlinux-bootstrap
 fi
 
