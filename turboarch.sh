@@ -8,7 +8,7 @@ cat << EOF
  / / / /_/ / /  / /_/ / /_/ / ___ |/ /  / /__/ / / /
 /_/  \__,_/_/  /_.___/\____/_/  |_/_/   \___/_/ /_/ 
 
-TurboArch Release Candidate 4 ( https://evgvs.com/ )
+TurboArch Release Candidate 5 ( https://evgvs.com/ )
 
 Copyright (C) 2024 Evgeny Vasilievich LINUX PIMP
 

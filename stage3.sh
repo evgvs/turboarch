@@ -60,6 +60,21 @@ if [ "$GNOME" -eq 1  ]; then
   echo -e "\e[1m\e[46m\e[97mINSTALLING GNOME\e[0m"
   pacman --noconfirm -Sy gnome gnome-tweaks
   systemctl enable gdm
+
+  # удалить ебаные темы колхозанские блять и прочий мусор от старой системы
+  for d in /home/*/ ; do
+    echo "$d"
+    rm -rf "$d/.config/dconf"
+    rm -rf "$d/.config/gtk-3.0"
+    rm -rf "$d/.config/gtk-4.0"
+    rm -rf "$d/.cache/*"
+
+    rm -rf "$d/.local/share/themes"
+    rm -rf "$d/.local/share/icons"
+
+    rm -rf "$d/.themes"
+    rm -rf "$d/.icons"
+  done
 fi
 
 if [ "$NETWORKMANAGER" -eq 1  ]; then
