@@ -36,8 +36,6 @@ fi
 
 rm -rf /boot/*
 
-
-# установить ЕБУЧИЙ СРАКУТ и хрюки пекмена для него
 if [ "$SRAKUT" -eq 1  ]; then
   echo -e "\e[1m\e[40m\e[93mINSTALLING DRACUT AND LVM2\e[0m"
   pacman --noconfirm -Sy lvm2 mdadm dracut
@@ -61,7 +59,7 @@ if [ "$GNOME" -eq 1  ]; then
   pacman --noconfirm -Sy gnome gnome-tweaks
   systemctl enable gdm
 
-  # удалить ебаные темы и прочий мусор от старой системы
+  # remove the fucking themes and other shit from the old system
   for d in /home/*/ ; do
     echo "$d"
     rm -rf "$d/.config/dconf"
@@ -97,7 +95,7 @@ else
   target=$(basename "$(readlink -f "/sys/class/block/$dev/..")")
 
   if [ -z "$target" ]; then
-    echo -e "\e[1m\e[40m\e[93mCANNOT FIND DEVICE ON / FOR SOME REASON\e[0m"
+    echo -e "\e[1m\e[40m\e[93mCANNOT FIND THE DEVICE ON / FOR SOME REASON\e[0m"
     lsblk
     read -p "Enter drive for GRUB installation (e.g. sda or nvme0n1): " -r target
 
